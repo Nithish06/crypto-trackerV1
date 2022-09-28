@@ -5,7 +5,7 @@ import MasterIndex from "./master-index/MasterIndex";
 
 export default function Home() {
   return (
-    <div>
+    <div style={{ width: "100%", height: "100%" }}>
       <MasterIndex />
     </div>
   );
