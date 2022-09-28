@@ -13,8 +13,10 @@ import {
   createIcon,
   Input,
 } from "@chakra-ui/react";
+import Coin from "../components/Coin";
 function MasterIndex() {
   const [data, setData] = useState();
+  const [searchValue, setSearchValue] = useState("");
   const url =
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false";
 
@@ -25,10 +27,15 @@ function MasterIndex() {
         setData(resp);
         console.log(resp);
       });
-  });
+  }, []);
   const inputOnchange = (e) => {
-    console.log(e.target.value);
+    setSearchValue(e.target.value);
   };
+
+  //   const filteredCoins = data?.filter(() =>
+  //     data?.name?.toLowerCase().includes(searchValue.toLowerCase())
+  //   );
+
   return (
     <div>
       <div className={styles.mainWrapper}>
@@ -65,6 +72,9 @@ function MasterIndex() {
             </Text>
           </Box>
         </Stack>
+        <div>
+          <Coin data={data} />
+        </div>
       </div>
     </div>
   );

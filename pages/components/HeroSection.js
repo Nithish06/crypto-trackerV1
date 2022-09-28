@@ -26,7 +26,7 @@ function HeroSection() {
         <Stack
           as={Box}
           textAlign={"center"}
-          spacing={{ base: 8, md: 14 }}
+          spacing={{ base: 5, md: 12 }}
           py={{ base: 20, md: 36 }}>
           <Heading
             fontWeight={600}
